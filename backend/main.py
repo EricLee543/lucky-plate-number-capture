@@ -28,6 +28,11 @@ def hello_world():
         return send_file(f_path, mimetype='image/jpg')
 
 
+@app.route("/ping", methods=["GET"])
+def ping():
+    return "pong"
+
+
 if __name__ == "__main__":
     create_dir()
     app.run(host="0.0.0.0", port=8888)
